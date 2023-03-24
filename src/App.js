@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import { useState } from 'react';
+import LoginForm from './components/login_form';
+import RegisterForm from './components/register_form';
+
+const App = () => {
+  const [authState, setAuthState] = useState('login');
+
+  const onChangeState = () => {
+    setAuthState('register');
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{
+      position: "absolute",
+      top: "50%",
+      left:"50%",
+      transform: "translate(-50%, -50%)",
+      width: "200px",
+      innerHeight: "200px",
+      // background: ""
+      }}>
+        {authState == 'login' ? <LoginForm changeState={onChangeState}/> : <RegisterForm />}
     </div>
   );
 }
