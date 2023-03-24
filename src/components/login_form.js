@@ -1,14 +1,17 @@
 import React from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input } from 'antd';
+import { Link } from "react-router-dom";
 import './login_form.css';
 
-const App = () => {
+const LoginForm = () => {
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
   };
 
   return (
+    <>
+    <h2>Đăng nhập</h2>
     <Form
       name="normal_login"
       className="login-form"
@@ -36,19 +39,21 @@ const App = () => {
           <Checkbox>Remember me</Checkbox>
         </Form.Item>
 
-        <a className="login-form-forgot" href="">
+        <Link className="login-form-forgot" to="/forgot_password">
           Forgot password
-        </a>
+        </Link>
       </Form.Item>
 
       <Form.Item>
         <Button type="primary" htmlType="submit" className="login-form-button">
           Log in
         </Button>
-        Or <a href="">register now!</a>
+        {/* <a href="" onClick={onChangeView}>register now!</a> */}
+        <Link to="/register">Register now!</Link>
       </Form.Item>
     </Form>
+    </>
   );
 };
 
-export default App;
+export default LoginForm;

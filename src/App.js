@@ -2,26 +2,38 @@
 import { useState } from 'react';
 import LoginForm from './components/login_form';
 import RegisterForm from './components/register_form';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+import ForgotPassword from './components/forgot_password';
 
 const App = () => {
   // const [authState, setAuthState] = useState('login');
 
-  // const onChangeState = () => {
+  // const onChangeView = () => {
   //   setAuthState('register');
   // }
   return (
-    <div style={{
-      position: "absolute",
-      top: "50%",
-      left:"50%",
-      transform: "translate(-50%, -50%)",
-      // width: "300px",
-      // innerHeight: "300px",
-      // background: ""
+    <>
+      <div style={{
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
       }}>
-        {/* {authState == 'login' ? <LoginForm /> : <RegisterForm />} */}
-        <RegisterForm />
-    </div>
+        <Router>
+          <Routes>
+            <Route path="/" element={<LoginForm />} />
+            <Route path="/register" element={<RegisterForm />} />
+            <Route path="/forgot_password" element={<ForgotPassword />} />
+          </Routes>
+        </Router>
+      </div>
+
+    </>
   );
 }
 
