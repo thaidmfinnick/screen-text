@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input } from 'antd';
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import './login_form.css';
 
 const LoginForm = () => {
+  // const navigate = useNavigate();
+  // const isFinished = false;
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
+    // isFinished = true;
   };
+  // useEffect(() => {
+  //   if (isFinished) navigate("/main_screen");
+  // })
 
   return (
     <>
@@ -45,10 +51,11 @@ const LoginForm = () => {
       </Form.Item>
 
       <Form.Item>
-        <Button type="primary" htmlType="submit" className="login-form-button">
-          Log in
-        </Button>
-        {/* <a href="" onClick={onChangeView}>register now!</a> */}
+        <Link to="/main_screen">
+          <Button type="primary" htmlType="submit" className="login-form-button">
+            Log in
+          </Button>
+        </Link>
         <Link to="/register">Register now!</Link>
       </Form.Item>
     </Form>

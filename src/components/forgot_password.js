@@ -25,6 +25,8 @@ const onFinish = (values) => {
     console.log(values);
 };
 const ForgotPassword = () => (
+    <>
+    <h2>Lấy lại mật khẩu</h2>
     <Form
         {...layout}
         name="nest-messages"
@@ -34,7 +36,7 @@ const ForgotPassword = () => (
         }}
         validateMessages={validateMessages}
     >
-        <Form.Item
+        {/* <Form.Item
             name={['user', 'name']}
             label="Name"
             rules={[
@@ -44,7 +46,7 @@ const ForgotPassword = () => (
             ]}
         >
             <Input />
-        </Form.Item>
+        </Form.Item> */}
         <Form.Item
             name={['user', 'email']}
             label="Email"
@@ -56,7 +58,7 @@ const ForgotPassword = () => (
         >
             <Input />
         </Form.Item>
-        <Form.Item
+        {/* <Form.Item
             name={['user', 'age']}
             label="Age"
             rules={[
@@ -68,13 +70,13 @@ const ForgotPassword = () => (
             ]}
         >
             <InputNumber />
-        </Form.Item>
-        <Form.Item name={['user', 'website']} label="Website">
+        </Form.Item> */}
+        {/* <Form.Item name={['user', 'website']} label="Website">
             <Input />
         </Form.Item>
         <Form.Item name={['user', 'introduction']} label="Introduction">
             <Input.TextArea />
-        </Form.Item>
+        </Form.Item> */}
         <Form.Item
             wrapperCol={{
                 ...layout.wrapperCol,
@@ -85,6 +87,6 @@ const ForgotPassword = () => (
                 Submit
             </Button>
         </Form.Item>
-    </Form>
+    </Form></>
 );
 export default ForgotPassword;

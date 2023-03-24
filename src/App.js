@@ -9,6 +9,7 @@ import {
   Link
 } from "react-router-dom";
 import ForgotPassword from './components/forgot_password';
+import MainScreen from './components/main_screen';
 
 const App = () => {
   // const [authState, setAuthState] = useState('login');
@@ -23,12 +24,14 @@ const App = () => {
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
+        textAlign: "center"
       }}>
         <Router>
           <Routes>
             <Route path="/" element={<LoginForm />} />
             <Route path="/register" element={<RegisterForm />} />
             <Route path="/forgot_password" element={<ForgotPassword />} />
+            <Route path="/main_screen" element={<MainScreen />} />
           </Routes>
         </Router>
       </div>
